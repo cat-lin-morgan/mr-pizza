@@ -10,9 +10,9 @@ const PizzaSchema = new Schema(
             type: String
         },
         createdAt: {
-          type: Date,
-          default: Date.now,
-          get: createdAtVal => dateFormat(createdAtVal)
+            type: Date,
+            default: Date.now,
+            get: dateFormat
         },
         size: {
             type: String,
@@ -29,7 +29,7 @@ const PizzaSchema = new Schema(
     {
         toJSON: {
             virtuals: true,
-            getter: true
+            getters: true
         },
         id: false
     }
