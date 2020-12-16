@@ -55,7 +55,7 @@ const pizzaController = {
         })
         .catch(err => res.status(400).json(err));
     },
-    //delete all the pizzas
+    //delete a single pizzas
     deletePizza({ params }, res) {
         Pizza.findOneAndDelete({ _id: params.id })
         .then(dbPizzaData => {
